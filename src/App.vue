@@ -1,19 +1,24 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-07 15:39:47
+ * @LastEditTime: 2021-02-11 21:22:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vuedemo\src\App.vue
+-->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <back-home />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import BackHome from '@/components/BackHome.vue';
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { BackHome },
+};
 </script>
 
 <style>
