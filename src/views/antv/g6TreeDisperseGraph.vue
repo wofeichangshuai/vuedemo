@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 16:33:52
- * @LastEditTime: 2021-02-15 21:01:44
+ * @LastEditTime: 2021-02-16 14:01:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\antv\g6TreeGraph.vue
@@ -163,7 +163,17 @@ export default {
         },
         defaultNode: {
           type: 'rect',
-          size: 26,
+          style: {
+            height: 30,
+            radius: 4,
+            fill: '#ecf6fc',
+            stroke: '#999',
+          },
+          labelCfg: {
+            style: {
+              fontSize: 14,
+            },
+          },
           anchorPoints: [
             [0, 0.5],
             [1, 0.5],
@@ -188,15 +198,37 @@ export default {
             return 50;
           },
         },
+        fitView: true,
+        minZoom: 0.7,
+        maxZoom: 1,
       });
 
       this.graph.on('node:click', (e) => {
-        console.log('e=', e);
+        // console.log('g6=', G6);
         const model = e.item.getModel();
-        model.collapsed = !model.collapsed;
-        this.graph.updateItem(e.item, model);
-        this.graph.layout();
+        console.log('e=', e, model);
+        // model.collapsed = !model.collapsed;
+        // this.graph.updateItem(e.item, model);
+        // this.graph.layout();
+        this.graph.changeData(JSON.parse(JSON.stringify(model)));
+        this.graph.fitView = true;
+
         e.item.toFront();
+
+        /**
+         * @description: 是否有子节点，没有可以有点击事件
+         */
+        if (!model.children) {
+          console.log(model.label);
+        }
+      });
+
+      this.graph.node((node) => {
+        // console.log(node.label, G6.Util.getTextSize(node.label, 14));
+        const size = G6.Util.getTextSize(node.label, 14);
+        return {
+          size: [size[0] + 10, 20],
+        };
       });
 
       // let centerX = 0;
@@ -219,9 +251,8 @@ export default {
       // });
 
       // this.graph.data(this.data);
-      this.graph.data(dataImp);
+      this.graph.data({ ...dataImp });
       this.graph.render();
-      this.graph.fitView();
 
       // if (typeof window !== 'undefined') {
       //   window.onresize = () => {
