@@ -1,13 +1,26 @@
+
+
 /*
  * @Author: your name
  * @Date: 2021-02-07 23:09:43
- * @LastEditTime: 2021-02-15 20:55:42
+ * @LastEditTime: 2021-02-19 19:02:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\antv\data.js
  */
-export default {
+const data = {
   label: '风控管理',
+  labelCfg: {
+    style: {
+        fontSize: 30,
+        fill: '#fff',
+        fontWeight: '600',
+    },
+  },
+  size: [180,80],
+  style:{
+      fill: 'red',
+  },
   children: [
       {
           label: '营销中心',
@@ -23,12 +36,12 @@ export default {
                           updateTime: '2021-02-07 20:07:45',
                           remark: null,
                           params: {},
-                          // id: 20,
+                          id: 20,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070006',
+                          riskNumber: 'FX-202102070006',
                           reportDate: '2021-02-08',
                           riskSource: '2',
                           deptId: '101',
@@ -71,12 +84,12 @@ export default {
                           updateTime: null,
                           remark: null,
                           params: {},
-                          // id: 23,
+                          id: 23,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070009',
+                          riskNumber: 'FX-202102070009',
                           reportDate: '2021-02-02',
                           riskSource: '2',
                           deptId: '113',
@@ -119,12 +132,12 @@ export default {
                           updateTime: '2021-02-07 20:53:36',
                           remark: null,
                           params: {},
-                          // id: 16,
+                          id: 16,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070003',
+                          riskNumber: 'FX-202102070003',
                           reportDate: '2021-02-09',
                           riskSource: '1',
                           deptId: '116',
@@ -167,12 +180,12 @@ export default {
                           updateTime: null,
                           remark: null,
                           params: {},
-                          // id: 18,
+                          id: 18,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070003',
+                          riskNumber: 'FX-202102070003',
                           reportDate: '2021-02-09',
                           riskSource: '1',
                           deptId: '117',
@@ -205,12 +218,12 @@ export default {
                           updateTime: null,
                           remark: null,
                           params: {},
-                          // id: 19,
+                          id: 19,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070003',
+                          riskNumber: 'FX-202102070003',
                           reportDate: '2021-02-09',
                           riskSource: '1',
                           deptId: '117',
@@ -248,12 +261,12 @@ export default {
                           updateTime: null,
                           remark: null,
                           params: {},
-                          // id: 17,
+                          id: 17,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070003',
+                          riskNumber: 'FX-202102070003',
                           reportDate: '2021-02-09',
                           riskSource: '1',
                           deptId: '117',
@@ -296,12 +309,12 @@ export default {
                           updateTime: '2021-02-07 23:58:34',
                           remark: null,
                           params: {},
-                          // id: 27,
+                          id: 27,
                           applyTime: '2021-02-07',
                           applyUser: 1,
                           applyUserName: '管理员',
                           riskState: '2',
-                          label: 'FX-202102070013',
+                          riskNumber: 'FX-202102070013',
                           reportDate: '2021-02-09',
                           riskSource: '2',
                           deptId: '104',
@@ -332,3 +345,23 @@ export default {
       }
   ]
 };
+
+function getRecursion(dt){
+    if (dt.children && dt.children.length>0) {
+        dt.label = dt.label==='风控管理'? '风控管理':dt.label + '（' + dt.children.length +'）' ;
+        dt.children.forEach(element => {
+            if(element.id){
+                element.tempId = element.id
+                delete element.id
+            }
+            getRecursion(element)
+        });
+    }else{
+        dt.label = '风险来源-详情';
+    }
+}
+
+getRecursion(data);
+console.log('data=',data);
+
+export default data;

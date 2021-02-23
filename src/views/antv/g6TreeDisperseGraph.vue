@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 16:33:52
- * @LastEditTime: 2021-02-16 14:01:55
+ * @LastEditTime: 2021-02-19 18:48:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\antv\g6TreeGraph.vue
@@ -148,14 +148,14 @@ export default {
         modes: {
           default: [
             {
-              // type: 'collapse-expand',
-              // onChange: function onChange(item, collapsed) {
-              //   console.log('item=', item, collapsed);
-              //   const data = item.get('model');
-              //   data.collapsed = collapsed;
-              //   item.toFront();
-              //   return true;
-              // },
+              type: 'collapse-expand',
+              onChange: function onChange(item, collapsed) {
+                console.log('item=', item, collapsed);
+                const data = item.get('model');
+                data.collapsed = collapsed;
+                item.toFront();
+                return true;
+              },
             },
             'drag-canvas',
             'zoom-canvas',
@@ -164,12 +164,14 @@ export default {
         defaultNode: {
           type: 'rect',
           style: {
-            height: 30,
+            // height: 30,
             radius: 4,
-            fill: '#ecf6fc',
-            stroke: '#999',
+            fill: '#e8e8e8',
+            stroke: '#fff',
           },
           labelCfg: {
+            position: 'center',
+            offset: 2,
             style: {
               fontSize: 14,
             },
@@ -180,22 +182,23 @@ export default {
           ],
         },
         defaultEdge: {
-          type: 'cubic-horizontal',
+          // type: 'cubic-horizontal',
+          type: 'polyline',
         },
         layout: {
           type: 'mindmap',
           direction: 'H',
           getHeight: () => {
-            return 16;
+            return 30;
           },
           getWidth: () => {
             return 16;
           },
           getVGap: () => {
-            return 10;
+            return 20;
           },
           getHGap: () => {
-            return 50;
+            return 100;
           },
         },
         fitView: true,
@@ -204,14 +207,13 @@ export default {
       });
 
       this.graph.on('node:click', (e) => {
-        // console.log('g6=', G6);
+        console.log('g6=', G6);
         const model = e.item.getModel();
-        console.log('e=', e, model);
+        // console.log('e=', e, model);
         // model.collapsed = !model.collapsed;
         // this.graph.updateItem(e.item, model);
         // this.graph.layout();
-        this.graph.changeData(JSON.parse(JSON.stringify(model)));
-        this.graph.fitView = true;
+        // this.graph.changeData(JSON.parse(JSON.stringify(model)));
 
         e.item.toFront();
 
@@ -224,10 +226,16 @@ export default {
       });
 
       this.graph.node((node) => {
+        console.log('node=', node);
         // console.log(node.label, G6.Util.getTextSize(node.label, 14));
-        const size = G6.Util.getTextSize(node.label, 14);
+        // const size = G6.Util.getTextSize(node.label, 14);
+        const size = G6.Util.getTextSize(
+          node.label,
+          node.labelCfg.style.fontSize
+        );
+        // console.log('this.size=',);
         return {
-          size: [size[0] + 10, 20],
+          size: node.size ? node.size : [size[0] + 30, 30],
         };
       });
 
@@ -251,7 +259,7 @@ export default {
       // });
 
       // this.graph.data(this.data);
-      this.graph.data({ ...dataImp });
+      this.graph.data(dataImp);
       this.graph.render();
 
       // if (typeof window !== 'undefined') {
