@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 15:43:40
- * @LastEditTime: 2021-02-12 16:45:44
+ * @LastEditTime: 2021-03-01 18:58:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\components\MenuBar.vue
@@ -53,6 +53,17 @@
           </el-button>
         </router-link>
 
+      </el-col>
+    </el-row>
+
+    <el-divider></el-divider>
+    <el-row>
+      <el-col :span="24">
+        <router-link to="/transitionDemo1">
+          <el-button type="primary">
+            Transition Demo1
+          </el-button>
+        </router-link>
       </el-col>
     </el-row>
   </div>
