@@ -8,9 +8,12 @@
 -->
 <template>
   <div class="dome1">
-    <transition name="show-tran">
-      <div v-show="show">show</div>
-    </transition>
+    <div class="first-div">
+      show
+      <transition name="show-tran">
+        <div class="show-div" v-show="show"></div>
+      </transition>
+    </div>
     <el-button @click="clickButton">click</el-button>
   </div>
 </template>
@@ -32,10 +35,19 @@ export default {
 
 <style lang="scss">
 .dome1 {
-  div {
+  .first-div {
     width: 100px;
-    height: 100px;
-    border-bottom: 2px solid red;
+    height: 150px;
+    margin: auto;
+    border: 1px solid blue;
+    .show-div {
+      width: 100px;
+      height: 100px;
+      border-bottom: 2px solid red;
+    }
+  }
+  .el-button {
+    margin-top: 30px;
   }
 }
 .show-tran-enter-active,
