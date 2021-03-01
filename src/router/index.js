@@ -63,6 +63,11 @@ const routes = [
     name: 'transitionDemo1',
     component: () => import('@/views/transition/demo1.vue'),
   },
+  {
+    path: '/transitionDemo2',
+    name: 'transitionDemo2',
+    component: () => import('@/views/transition/demo2.vue'),
+  },
 ];
 
 export default new VueRouter({

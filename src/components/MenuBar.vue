@@ -11,48 +11,31 @@
     <el-row>
       <el-col :span="24">
         <router-link to="/g6Graph">
-          <el-button type="primary">
-            G6 Graph
-          </el-button>
+          <el-button type="primary"> G6 Graph </el-button>
         </router-link>
         <router-link to="/g6TreeGraph">
-          <el-button type="primary">
-            G6 Tree Graph
-          </el-button>
+          <el-button type="primary"> G6 Tree Graph </el-button>
         </router-link>
         <router-link to="/g6RegisterNode1">
-          <el-button type="primary">
-            G6 Register Node1
-          </el-button>
+          <el-button type="primary"> G6 Register Node1 </el-button>
         </router-link>
         <router-link to="/g6RegisterEdge1">
-          <el-button type="primary">
-            G6 Register Edge1
-          </el-button>
+          <el-button type="primary"> G6 Register Edge1 </el-button>
         </router-link>
         <router-link to="/g6RegisterGroup1">
-          <el-button type="primary">
-            G6 Register Group1
-          </el-button>
+          <el-button type="primary"> G6 Register Group1 </el-button>
         </router-link>
       </el-col>
       <el-col :span="24">
         <router-link to="/g6SimpleInteraction">
-          <el-button type="primary">
-            G6 Simple Interaction
-          </el-button>
+          <el-button type="primary"> G6 Simple Interaction </el-button>
         </router-link>
         <router-link to="/g6DomGraph">
-          <el-button type="primary">
-            G6 Dom Graph
-          </el-button>
+          <el-button type="primary"> G6 Dom Graph </el-button>
         </router-link>
         <router-link to="/g6TreeDisperseGraph">
-          <el-button type="primary">
-            G6 Tree Disperse Graph
-          </el-button>
+          <el-button type="primary"> G6 Tree Disperse Graph </el-button>
         </router-link>
-
       </el-col>
     </el-row>
 
@@ -60,9 +43,10 @@
     <el-row>
       <el-col :span="24">
         <router-link to="/transitionDemo1">
-          <el-button type="primary">
-            Transition Demo1
-          </el-button>
+          <el-button type="primary"> Transition Demo1 </el-button>
+        </router-link>
+        <router-link to="/transitionDemo2">
+          <el-button type="primary"> Transition Demo2 </el-button>
         </router-link>
       </el-col>
     </el-row>
