@@ -15,7 +15,12 @@
             </transition>
           </div>
         </template>
+        <div class="tabs-bar" :style="tabsBarStyle"></div>
       </div>
+    </div>
+    <div class="rotate-img">
+      <img src="../../assets/logo.png" alt="" />
+      旋转
     </div>
   </div>
 </template>
@@ -62,9 +67,15 @@ export default {
         borderBottom: '2px solid #1f94de',
         color: '#1f94de',
       },
+      tabsBarNum: 0,
       // 下面优先级切换标记
       bottomPriorityFlag: '',
     };
+  },
+  computed: {
+    tabsBarStyle() {
+      return { transform: 'translateX(' + this.tabsBarNum + 'px)' };
+    },
   },
   mounted() {
     this.prioritySelect[0].tab = true;
@@ -73,6 +84,7 @@ export default {
     /** 切换已获取数据的优先级 */
     handleTabCut(index, val) {
       if (val) {
+        this.tabsBarNum = index * 125;
         this.prioritySelect.map((item) => {
           return (item.tab = false);
         });
@@ -86,29 +98,68 @@ export default {
 
 <style lang="scss">
 .demo2 {
-  .tabs-header {
-    display: flex;
-    justify-content: space-around;
-    width: 500px;
-    margin: auto;
-    .tab-div {
-      border-bottom: 2px solid #e8f5ff;
-      height: 40px;
-      line-height: 50px;
-      // border-bottom: 2px solid #1f94de;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      &:hover {
-        cursor: pointer;
-        color: #1f94de;
+  .note-pad-content {
+    .tabs-header {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      .tab-div {
+        border-bottom: 2px solid #e8f5ff;
+        height: 40px;
+        line-height: 50px;
+        // border-bottom: 2px solid #1f94de;
+        width: 125px;
+        text-align: center;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          color: #1f94de;
+        }
+        .tran-div {
+          width: 100%;
+          height: 100%;
+          border-top: 1px solid red;
+          position: absolute;
+          top: 0px;
+        }
       }
-      .tran-div {
-        width: 100%;
-        height: 100%;
-        border-top: 1px solid red;
-        position: absolute;
-        top: 0px;
+    }
+    .tabs-bar {
+      border: 1px solid blue;
+      width: 123px;
+      margin: 10px 0;
+      position: absolute;
+      left: 37%;
+      transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    &::after {
+      width: 100%;
+      height: 2px;
+      border-bottom: 2px solid red;
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+  }
+  .rotate-img {
+    margin: 30px 0;
+    img {
+      width: 45px;
+      // transition: 0.3s;
+      // transition-duration: 5s;
+      // transform-style: flat;
+      &:hover {
+        // transform: rotate(360 * 4deg);
+        // animation: rotate 0.3s linear infinite;
+        animation: rotate 0.3s linear 5;
+      }
+    }
+    @-webkit-keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
       }
     }
   }
