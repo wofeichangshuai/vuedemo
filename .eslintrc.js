@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-11 14:03:43
- * @LastEditTime: 2021-02-15 17:16:51
+ * @LastEditTime: 2021-04-22 16:33:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\.eslintrc.js
@@ -22,7 +22,7 @@ module.exports = {
     // semi: ['error', 'never']
     'no-async-promise-executor': 1, //禁止使用异步函数作为 Promise executor
     'no-await-in-loop': 1, // 禁止使用 await async
-    'no-console': 1, //禁用 console
+    // 'no-console': 1, //禁用 console
     'no-debugger': 1, //禁用 debugger
     'no-dupe-args': 2, //函数参数不能重复
     'no-regex-spaces': 2, //禁止正则表达式字面量中出现多个空格

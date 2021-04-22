@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 15:43:40
- * @LastEditTime: 2021-03-01 18:58:30
+ * @LastEditTime: 2021-04-22 16:23:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\components\MenuBar.vue
@@ -47,6 +47,9 @@
         </router-link>
         <router-link to="/transitionDemo2">
           <el-button type="primary"> Transition Demo2 </el-button>
+        </router-link>
+        <router-link to="/test1">
+          <el-button type="primary"> test1 </el-button>
         </router-link>
       </el-col>
     </el-row>

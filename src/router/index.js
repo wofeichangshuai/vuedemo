@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-07 16:26:13
- * @LastEditTime: 2021-03-01 18:58:40
+ * @LastEditTime: 2021-04-22 16:21:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\router\index.js
@@ -67,6 +67,11 @@ const routes = [
     path: '/transitionDemo2',
     name: 'transitionDemo2',
     component: () => import('@/views/transition/demo2.vue'),
+  },
+  {
+    path: '/test1',
+    name: 'test1',
+    component: () => import('@/views/test/test1.vue'),
   },
 ];
 
