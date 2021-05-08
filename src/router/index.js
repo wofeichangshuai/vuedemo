@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-07 16:26:13
- * @LastEditTime: 2021-04-22 16:21:40
+ * @LastEditTime: 2021-04-23 10:01:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\router\index.js
@@ -72,6 +72,11 @@ const routes = [
     path: '/test1',
     name: 'test1',
     component: () => import('@/views/test/test1.vue'),
+  },
+  {
+    path: '/vuedraggable1',
+    name: 'vuedraggable1',
+    component: () => import('@/views/vuedraggable/vuedraggable1.vue'),
   },
 ];
 

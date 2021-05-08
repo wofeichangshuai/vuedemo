@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-07 15:39:47
- * @LastEditTime: 2021-02-12 10:31:04
+ * @LastEditTime: 2021-04-23 09:51:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\main.js
@@ -12,8 +12,12 @@ import router from './router';
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+//引入拖拽排序插件
+import VueDND from 'awe-dnd'
 
 Vue.use(ElementUI);
+Vue.use(VueDND)
+
 Vue.config.productionTip = false;
 
 new Vue({

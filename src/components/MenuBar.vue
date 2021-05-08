@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 15:43:40
- * @LastEditTime: 2021-04-22 16:23:22
+ * @LastEditTime: 2021-04-23 10:01:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\components\MenuBar.vue
@@ -50,6 +50,15 @@
         </router-link>
         <router-link to="/test1">
           <el-button type="primary"> test1 </el-button>
+        </router-link>
+      </el-col>
+    </el-row>
+
+    <el-divider></el-divider>
+    <el-row>
+      <el-col :span="24">
+        <router-link to="/vuedraggable1">
+          <el-button type="primary"> vuedraggable1 </el-button>
         </router-link>
       </el-col>
     </el-row>

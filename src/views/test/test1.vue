@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-22 16:21:51
- * @LastEditTime: 2021-04-22 19:02:01
+ * @LastEditTime: 2021-04-23 10:01:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\test\test1.vue
@@ -22,6 +22,9 @@
     <el-tag v-for="item in paramItems" :key="item.label" effect="plain" @click="setScaleOfMarks(item.label)" style="margin:0 10px;">
       {{ item.label }}
     </el-tag>
+
+    <el-divider></el-divider>
+
   </div>
 </template>
 
