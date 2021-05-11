@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 15:43:40
- * @LastEditTime: 2021-04-23 10:01:19
+ * @LastEditTime: 2021-05-10 15:52:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\components\MenuBar.vue
@@ -48,9 +48,6 @@
         <router-link to="/transitionDemo2">
           <el-button type="primary"> Transition Demo2 </el-button>
         </router-link>
-        <router-link to="/test1">
-          <el-button type="primary"> test1 </el-button>
-        </router-link>
       </el-col>
     </el-row>
 
@@ -59,6 +56,18 @@
       <el-col :span="24">
         <router-link to="/vuedraggable1">
           <el-button type="primary"> vuedraggable1 </el-button>
+        </router-link>
+      </el-col>
+    </el-row>
+
+    <el-divider></el-divider>
+    <el-row>
+      <el-col :span="24">
+        <router-link to="/test1">
+          <el-button type="primary"> 公式test </el-button>
+        </router-link>
+        <router-link to="/test1">
+          <el-button type="primary"> 周期重复规则设置 </el-button>
         </router-link>
       </el-col>
     </el-row>
