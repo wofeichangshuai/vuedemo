@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-07 16:26:13
- * @LastEditTime: 2021-04-23 10:01:03
+ * @LastEditTime: 2021-05-11 10:01:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\router\index.js
@@ -77,6 +77,11 @@ const routes = [
     path: '/vuedraggable1',
     name: 'vuedraggable1',
     component: () => import('@/views/vuedraggable/vuedraggable1.vue'),
+  },
+  {
+    path: '/cycleSetting',
+    name: 'cycleSetting',
+    component: () => import('@/views/test/cycleSetting.vue'),
   },
 ];
 

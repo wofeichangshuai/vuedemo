@@ -12,6 +12,7 @@
     "awe-dnd": "^0.3.4",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.0",
+    "moment": "^2.29.1",
     "sass-loader": "^8.0.2",
     "sortablejs": "^1.13.0",
     "vue": "^2.6.11",
