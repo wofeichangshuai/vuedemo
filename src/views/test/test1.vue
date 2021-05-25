@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-22 16:21:51
- * @LastEditTime: 2021-04-23 10:01:38
+ * @LastEditTime: 2021-05-25 18:43:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\test\test1.vue
@@ -24,13 +24,17 @@
     </el-tag>
 
     <el-divider></el-divider>
-
+    <el-form>
+      <zi :form.sync="form" :arr.sync="arr" />
+    </el-form>
+    <el-button @click="handleSubmit">提交</el-button>
   </div>
 </template>
 
 <script>
+import Zi from './zi.vue';
 export default {
-  components: {},
+  components: { Zi },
   props: {},
   data() {
     return {
@@ -58,6 +62,8 @@ export default {
       ],
       methodItems: [{ label: 'IF' }, { label: 'AND' }, { label: 'OR' }],
       paramItems: [{ label: '目标值' }, { label: '完成值' }],
+      form: { name: 'aaa' },
+      arr: [1, 2],
     };
   },
   watch: {},
@@ -93,6 +99,10 @@ export default {
       }
       const test = /IF\(/gm.test(this.textarea);
       console.log(test);
+    },
+    handleSubmit() {
+      console.log('提交form', this.form);
+      console.log('提交array', this.arr);
     },
   },
 };
