@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-07 16:26:13
- * @LastEditTime: 2021-05-11 10:01:34
+ * @LastEditTime: 2021-05-29 17:18:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\router\index.js
@@ -82,6 +82,10 @@ const routes = [
     path: '/cycleSetting',
     name: 'cycleSetting',
     component: () => import('@/views/test/cycleSetting.vue'),
+  },
+  {
+    path: '/translate/test1',
+    component: () => import('@/views//translate/test1.vue'),
   },
 ];
 

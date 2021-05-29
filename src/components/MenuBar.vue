@@ -71,6 +71,15 @@
         </router-link>
       </el-col>
     </el-row>
+
+    <el-divider>平移</el-divider>
+    <el-row>
+      <el-col :span="24">
+        <router-link to="/translate/test1">
+          <el-button type="primary"> test1 </el-button>
+        </router-link>
+      </el-col>
+    </el-row>
   </div>
 </template>
 

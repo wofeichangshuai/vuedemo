@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-22 16:21:51
- * @LastEditTime: 2021-05-25 18:43:59
+ * @LastEditTime: 2021-05-26 19:48:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\test\test1.vue
@@ -25,7 +25,7 @@
 
     <el-divider></el-divider>
     <el-form>
-      <zi :form.sync="form" :arr.sync="arr" />
+      <zi :form="form" :arr.sync="arr" />
     </el-form>
     <el-button @click="handleSubmit">提交</el-button>
   </div>
