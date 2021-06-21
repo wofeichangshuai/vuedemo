@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 15:43:40
- * @LastEditTime: 2021-06-21 14:46:51
+ * @LastEditTime: 2021-06-21 15:06:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\components\MenuBar.vue
@@ -83,6 +83,18 @@
       <el-col :span="24">
         <router-link to="/translate/test1">
           <el-button type="primary"> test1 </el-button>
+        </router-link>
+      </el-col>
+    </el-row>
+
+    <el-divider>test2</el-divider>
+    <el-row>
+      <el-col :span="24">
+        <router-link to="/test2/comp2">
+          <el-button type="primary"> test2/comp2 </el-button>
+        </router-link>
+        <router-link to="/test2/comp3">
+          <el-button type="primary"> test2/comp3 </el-button>
         </router-link>
       </el-col>
     </el-row>

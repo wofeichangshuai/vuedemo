@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-07 16:26:13
- * @LastEditTime: 2021-06-21 14:47:01
+ * @LastEditTime: 2021-06-21 15:06:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\router\index.js
@@ -94,6 +94,14 @@ const routes = [
   {
     path: '/test/test3',
     component: () => import('@/views/test/test3.vue'),
+  },
+  {
+    path: '/test2/comp2',
+    component: () => import('@/views/test2/comp2.vue'),
+  },
+  {
+    path: '/test2/comp3',
+    component: () => import('@/views/test2/comp3.vue'),
   },
 ];
 
