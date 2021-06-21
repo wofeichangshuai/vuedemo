@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-07 15:43:40
- * @LastEditTime: 2021-05-11 10:01:00
+ * @LastEditTime: 2021-06-21 14:46:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\components\MenuBar.vue
@@ -68,6 +68,12 @@
         </router-link>
         <router-link to="/cycleSetting">
           <el-button type="primary"> 周期重复规则设置 </el-button>
+        </router-link>
+        <router-link to="/test/test2">
+          <el-button type="primary"> /test/test2 </el-button>
+        </router-link>
+        <router-link to="/test/test3">
+          <el-button type="primary"> /test/test3 </el-button>
         </router-link>
       </el-col>
     </el-row>
