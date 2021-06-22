@@ -1,0 +1,12 @@
+:export {
+  fontSize: 20px;
+  fontColor: #9c5076;
+  bwidth: 300px;
+}
+
+.comp2 {
+  color: fontColor;
+  border: 1px solid #000;
+  width: 200px;
+  height: 100px;
+}

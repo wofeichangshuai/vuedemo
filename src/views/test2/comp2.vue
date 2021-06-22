@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-21 15:04:21
- * @LastEditTime: 2021-06-21 17:57:32
+ * @LastEditTime: 2021-06-21 18:40:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuedemo\src\views\test2\comp2.vue
@@ -31,4 +31,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import url('./style.scss');
 </style>
