@@ -98,6 +98,18 @@
         </router-link>
       </el-col>
     </el-row>
+
+    <el-divider>test3</el-divider>
+    <el-row>
+      <el-col :span="24">
+        <router-link to="/test3/test1">
+          <el-button type="primary"> test3/test1 </el-button>
+        </router-link>
+        <router-link to="/test3/test2">
+          <el-button type="primary"> test3/test2 </el-button>
+        </router-link>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
